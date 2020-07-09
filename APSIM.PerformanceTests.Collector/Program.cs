@@ -364,7 +364,7 @@ namespace APSIM.PerformanceTests.Collector
             }
 
             List<PredictedObservedDetails> predictedObservedDetailList = new List<PredictedObservedDetails>();
-            foreach (PredictedObserved poModel in sims.FindAllDescendants<PredictedObserved>())
+            foreach (PredictedObserved poModel in Apsim.ChildrenRecursively(sims, typeof(PredictedObserved)))
             {
                 PredictedObservedDetails instance = new PredictedObservedDetails()
                 {
